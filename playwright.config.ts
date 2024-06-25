@@ -38,17 +38,7 @@ export default defineConfig({
           },
         },
       },
-    ],
-    // [
-    //   "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
-    //   {
-    //     slackWebhookUrl:
-    //       "https://hooks.slack.com/services/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",
-    //     sendResults: "always",
-    //     channels: ["autotests"],
-    //   },
-    // ],
- // ], 
+    ], 
  [
     './node_modules/playwright-slack-report/dist/src/SlackReporter.js',
     {
