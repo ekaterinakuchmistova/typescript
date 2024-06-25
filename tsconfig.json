@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",                        // Целевой стандарт JavaScript
-    "module": "commonjs",                   // Модульная система
-    "rootDir": "./src",                     // Папка с исходными файлами
-    "outDir": "./dist",                     // Папка для скомпилированных файлов
-    "strict": true,                         // Включение всех строгих проверок
-    "esModuleInterop": true,                // Совместимость с ES модулями
-    "skipLibCheck": true,                   // Пропуск проверки типов библиотек
+    "target": "es6",                    
+    "module": "commonjs",                
+    "rootDir": "./src",                    
+    "outDir": "./dist",                    
+    "strict": true,                        
+    "esModuleInterop": true,               
+    "skipLibCheck": true,                  
     "forceConsistentCasingInFileNames": true // Обеспечение согласованности регистров в именах файлов
   },
   "include": [
-    "src/**/*"                             // Включение всех файлов в папке src
-  ]
+    ".test.ts"  ]
 }
