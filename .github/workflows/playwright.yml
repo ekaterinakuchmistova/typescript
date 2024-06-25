@@ -23,6 +23,7 @@ jobs:
       run: |
         git config --global user.email "ekaterina.kuchmistova@gmail.com"
         git config --global user.name "Ekaterina Kuchmistova"
+        git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
     - name: Run Playwright tests
       env:
         QASE_AUTH_TOKEN: ${{ secrets.QASE_AUTH_TOKEN }}
@@ -32,7 +33,7 @@ jobs:
         npm run clean:reports
         mkdir -p playwright-report
         npx playwright test --reporter=html
-        npm run deploy:report
+        npx gh-pages -d playwright-report
     - uses: actions/upload-artifact@v4
       if: always()
       with:
