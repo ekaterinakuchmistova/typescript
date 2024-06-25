@@ -1,17 +1,21 @@
 {
   "name": "education",
   "version": "1.0.0",
-  "scripts": {
-    "start": "ts-node src/index.ts"
-  },
+"scripts": {
+  "test:report": "playwright test --reporter=html && npm run deploy:report",
+  "deploy:report": "gh-pages -d playwright-report",
+  "test": "npm run clean:reports && mkdir -p playwright-report && npm run test:report",
+  "clean:reports": "rm -rf playwright-report"
+},
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
-    "@types/node": "^20.14.5",
-    "playwright": "^1.44.1",
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.8",
+    "gh-pages": "^6.1.1",
+    "playwright": "^1.45.0",
     "playwright-qase-reporter": "^2.0.4",
     "playwright-slack-report": "^1.1.81",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "description": "",
   "main": "index.js",

@@ -8,6 +8,6 @@ test.describe("Home Page Tests", () => {
     const homePage = new HomePage(page);
     await homePage.goto("https://automationexercise.com");
     const title = await homePage.getTitle();
-    expect(title).toBe("Automation Exercise");
+    expect(title).toBe("Automation Exere");
   });
 });

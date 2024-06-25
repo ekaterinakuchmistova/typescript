@@ -45,7 +45,14 @@ export default defineConfig({
       channels: ['autotests'], // provide one or more Slack channels
       sendResults: 'always', // "always" , "on-failure", "off"
       slackOAuthToken: process.env.slackAuthToken,
-      layout: generateSlackReport
+      layout: generateSlackReport,
+      meta: [
+        {
+          key: 'Report URL',
+          value: `<${process.env.reportUrl}|View Report>`,
+        },
+      ],
+      attachments: true, // включить вложения
     },
   ]
 ], // change to 'on-failure' for local testing
