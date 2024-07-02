@@ -10,7 +10,9 @@
 
 ![image](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/90db608d-bc3f-4133-b54a-b7302aa75319)
 
-![image](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/b3b01412-e5c1-4c14-a530-6a16bff2a827)
+![image](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/df3aad99-c13e-4a2d-a679-62aaf3b6fc16)
+
+![image](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/fac88bc7-fc10-48e0-8118-2eb4a9ad99d6)
 
 ![image](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/b123d72b-b518-4fb2-a099-9f8c97a86b88)
 
