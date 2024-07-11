@@ -1,12 +1,12 @@
 {
   "name": "education",
   "version": "1.0.0",
-"scripts": {
-  "test:report": "playwright test --reporter=html && npm run deploy:report",
-  "deploy:report": "gh-pages -d playwright-report",
-  "test": "npm run clean:reports && mkdir -p playwright-report && npm run test:report",
-  "clean:reports": "rm -rf playwright-report"
-},
+  "scripts": {
+    "test:report": "playwright test --reporter=html && npm run deploy:report",
+    "deploy:report": "gh-pages -d playwright-report",
+    "test": "npm run clean:reports && mkdir -p playwright-report && npm run test:report",
+    "clean:reports": "rm -rf playwright-report"
+  },
   "devDependencies": {
     "@playwright/test": "^1.45.0",
     "@types/node": "^20.14.8",
@@ -20,6 +20,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@estruyf/github-actions-reporter": "^1.7.0",
     "acorn": "^8.12.0",
     "acorn-walk": "^8.3.3",
     "arg": "^5.0.2",

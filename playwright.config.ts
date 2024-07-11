@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
-import { generateSlackReport } from './playwrightSlackLayout';
-require('dotenv').config();
+import { generateSlackReport } from "./playwrightSlackLayout";
+require("dotenv").config();
 
 /**
  * Read environment variables from file.
@@ -12,6 +12,7 @@ require('dotenv').config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: 60000,
   //testDir: "./src/tests",
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -23,49 +24,51 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ["list"],
-    [
-      "playwright-qase-reporter",
-      {
-        testops: {
-          api: {
-            token: process.env.qaseAuthToken,
-          },
-          project: "DEMO",
-          uploadAttachments: true,
-          run: {
-            complete: true,
-          },
-        },
-      },
-    ], 
- [
-    './node_modules/playwright-slack-report/dist/src/SlackReporter.js',
-    {
-      channels: ['autotests'], // provide one or more Slack channels
-      sendResults: 'always', // "always" , "on-failure", "off"
-      slackOAuthToken: process.env.slackAuthToken,
-      layout: generateSlackReport,
-      meta: [
-        {
-          key: 'Report URL',
-          value: `<${process.env.reportUrl}|View Report>`,
-        },
-      ],
-      attachments: true, // включить вложения
-    },
-  ]
-], // change to 'on-failure' for local testing
-/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+    //["list", { printSteps: true }],
+    ["line"],
+    ["html"],
+    //['@estruyf/github-actions-reporter'],
+    // [
+    //   "playwright-qase-reporter",
+    //   {
+    //     testops: {
+    //       api: {
+    //         token: process.env.qaseAuthToken,
+    //       },
+    //       project: "DEMO",
+    //       uploadAttachments: true,
+    //       run: {
+    //         complete: true,
+    //       },
+    //     },
+    //   },
+    // ],
+    //  [
+    //     './node_modules/playwright-slack-report/dist/src/SlackReporter.js',
+    //     {
+    //       channels: ['autotests'], // provide one or more Slack channels
+    //       sendResults: 'always', // "always" , "on-failure", "off"
+    //       slackOAuthToken: process.env.slackAuthToken,
+    //       layout: generateSlackReport,
+    //       meta: [
+    //         {
+    //           key: 'Report URL',
+    //           value: `<${process.env.reportUrl}|View Report>`,
+    //         },
+    //       ],
+    //       attachments: true, // включить вложения
+    //     },
+    //   ]
+  ], // change to 'on-failure' for local testing
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     screenshot: "on",
     video: "on",
-
-
-    /* Base URL to use in actions like `await page.goto('/')`. */
-     baseURL: 'http://127.0.0.1:3000',
+    headless: false,
+    navigationTimeout: 60000,
+    baseURL: "https://automationexercise.com",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
