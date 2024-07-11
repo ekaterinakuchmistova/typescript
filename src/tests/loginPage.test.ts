@@ -151,7 +151,7 @@ test.describe("Login Page Tests", () => {
       });
 
       await test.step("Check if user is logged in", async () => {
-        await expect(page.locator(loginPage.loggedInUser)).toBeVisible();
+        await expect(loginPage.loggedInUser).toBeVisible();
       });
     });
   }
