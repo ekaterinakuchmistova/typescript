@@ -8,20 +8,20 @@
     "clean:reports": "rm -rf playwright-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.45.0",
-    "@types/node": "^20.14.8",
+    "@playwright/test": "^1.45.1",
+    "@types/node": "^20.14.10",
     "gh-pages": "^6.1.1",
-    "playwright": "^1.45.0",
-    "playwright-qase-reporter": "^2.0.4",
+    "playwright": "^1.45.1",
+    "playwright-qase-reporter": "^2.0.6",
     "playwright-slack-report": "^1.1.81",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.3"
   },
   "description": "",
   "main": "index.js",
   "dependencies": {
     "@estruyf/github-actions-reporter": "^1.7.0",
-    "acorn": "^8.12.0",
+    "acorn": "^8.12.1",
     "acorn-walk": "^8.3.3",
     "arg": "^5.0.2",
     "create-require": "^1.1.1",
