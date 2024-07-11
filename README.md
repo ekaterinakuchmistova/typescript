@@ -20,6 +20,8 @@
 
 ![image](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/edb48abe-b902-40d3-95f9-0181be135e05)
 
+![localhost_9323_](https://github.com/ekaterinakuchmistova/typescript/assets/90832725/a4dec1b4-ca7c-4613-a411-2623108771f2)
+
 
 
 
