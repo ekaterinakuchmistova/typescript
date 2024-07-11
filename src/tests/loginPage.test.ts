@@ -142,7 +142,6 @@ test.describe("Login Page Tests", () => {
 
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
-    await loginPage.gotoLogin();
   });
 
   for (const testCase of successfulLogins) {
@@ -160,8 +159,8 @@ test.describe("Login Page Tests", () => {
   for (const testCase of failedLogins) {
     test(`${testCase.number}. ${testCase.description}`, async ({ page }) => {
       await test.step("Setup route interception", async () => {
-        await page.route(/adsbygoogle|subscription/, (route) => route.abort());
-      });
+        await page.route(/adsbygoogle|subscription|font-awesome|jquery|bootstrap|googleapis|prettyPhoto/, (route) => route.abort());
+    });    
 
       await test.step("Attempt to login with invalid credentials", async () => {
         await loginPage.wrongLogin(testCase.email, testCase.password);
