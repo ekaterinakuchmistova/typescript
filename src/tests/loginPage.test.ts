@@ -174,8 +174,6 @@ test.describe("Login Page Tests", () => {
             return emailInput.validationMessage || passwordInput.validationMessage;
           });
 
-          console.log("Validation Message:", validationMessage);
-
           expect(validationMessage).toBe(testCase.expectedResult);
         });
       } else {
