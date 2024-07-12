@@ -21,13 +21,13 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 8 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     //["list", { printSteps: true }],
     ["line"],
     ["html"],
-    //['@estruyf/github-actions-reporter'],
+    ['@estruyf/github-actions-reporter'],
     // [
     //   "playwright-qase-reporter",
     //   {
@@ -43,22 +43,22 @@ export default defineConfig({
     //     },
     //   },
     // ],
-    //  [
-    //     './node_modules/playwright-slack-report/dist/src/SlackReporter.js',
-    //     {
-    //       channels: ['autotests'], // provide one or more Slack channels
-    //       sendResults: 'always', // "always" , "on-failure", "off"
-    //       slackOAuthToken: process.env.slackAuthToken,
-    //       layout: generateSlackReport,
-    //       meta: [
-    //         {
-    //           key: 'Report URL',
-    //           value: `<${process.env.reportUrl}|View Report>`,
-    //         },
-    //       ],
-    //       attachments: true, // включить вложения
-    //     },
-    //   ]
+     [
+        './node_modules/playwright-slack-report/dist/src/SlackReporter.js',
+        {
+          channels: ['autotests'], // provide one or more Slack channels
+          sendResults: 'always', // "always" , "on-failure", "off"
+          slackOAuthToken: process.env.slackAuthToken,
+          layout: generateSlackReport,
+          meta: [
+            {
+              key: 'Report URL',
+              value: `<${process.env.reportUrl}|View Report>`,
+            },
+          ],
+          attachments: true, // включить вложения
+        },
+      ]
   ], // change to 'on-failure' for local testing
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
@@ -66,7 +66,7 @@ export default defineConfig({
   use: {
     screenshot: "on",
     video: "on",
-    headless: false,
+    headless: true,
     navigationTimeout: 60000,
     baseURL: "https://automationexercise.com",
 

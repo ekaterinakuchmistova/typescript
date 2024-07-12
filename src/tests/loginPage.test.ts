@@ -151,7 +151,7 @@ test.describe("Login Page Tests", () => {
       });
 
       await test.step("Check if user is logged in", async () => {
-        await expect(page.locator(loginPage.loggedInUser)).toBeVisible();
+        await expect(loginPage.loggedInUser).toBeVisible();
       });
     });
   }
@@ -173,8 +173,6 @@ test.describe("Login Page Tests", () => {
             const passwordInput = document.querySelector('[data-qa="login-password"]') as HTMLInputElement;
             return emailInput.validationMessage || passwordInput.validationMessage;
           });
-
-          console.log("Validation Message:", validationMessage);
 
           expect(validationMessage).toBe(testCase.expectedResult);
         });
